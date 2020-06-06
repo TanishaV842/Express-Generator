@@ -28,29 +28,6 @@ const promotionSchema = new Schema({
     timestamps: true
 });
 
-const Promotion = new Schema({
-    name: {
-        type: "Mountain Adventure",
-        required: true
-    },
-    image: {
-        type: "images/breadcrumb-trail.jpg" ,
-        required: true
-    },
-    featured: {
-        type: Boolean,
-        default: true
-    },
-    cost: {
-        type: Currency,
-        required: true,
-        min: 1299
-    },
-    description: "Book a 5-day mountain trek with a seasoned outdoor guide! Fly fishing equipment and lessons provided.",
-    required: true
-}, {
-    timestamps: true
-});
 
 
 const Promotion = mongoose.model('Promotion', promotionSchema);

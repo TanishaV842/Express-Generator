@@ -20,27 +20,6 @@ const partnerSchema = new Schema({
     timestamps: true
 });
 
-const Partner = new Schema({
-    name: {
-        type: "Mongo Fly Shop",
-        required: true
-    },
-    image: {
-        type: "images/mongo-logo.png" ,
-        required: true
-    },
-    featured: {
-        type: Boolean,
-        default: false
-    },
-    description: "Need a new fishing pole, a tacklebox, or flies of all kinds? Stop by Mongo Fly Shop." ,
-    required: true
-}, {
-    timestamps: true
-});
-
-
-
 
 
 const Partner = mongoose.model('Partner', partnerSchema);
