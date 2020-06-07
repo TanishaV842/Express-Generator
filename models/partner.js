@@ -1,10 +1,11 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-// The {field:value) part is the schema. The User part is the model
+
 const partnerSchema = new Schema({
     name: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
     image: {
         type: String,
@@ -14,8 +15,10 @@ const partnerSchema = new Schema({
         type: Boolean,
         default: false
     },
-    description: String,
-    required: true
+    description: {
+        type: String,
+        required: true
+    }
 }, {
     timestamps: true
 });
