@@ -68,7 +68,7 @@ partnerRouter.route('/:partnerId')
     })
     .delete(cors.corsWithOptions, authenticate.verifyUser, authenticate.verifyAdmin, (req, res, next) => {
         Partner.findByIdAndDelete(req.params.partnerId)
-            .then(response => {
+            .then(response => { 
                 res.statusCode = 200;
                 res.setHeader('Content-Type', 'application/json');
                 res.json(response);
