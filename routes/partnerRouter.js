@@ -1,9 +1,12 @@
-const express = require("express");
+const express = require('express');
+const bodyParser = require('body-parser');
 const Partner = require('../models/partner');
 const authenticate = require('../authenticate');
 const cors = require('./cors');
 
 const partnerRouter = express.Router();
+
+partnerRouter.use(bodyParser.json());
 
 partnerRouter.route('/')
 .options(cors.corsWithOptions, (req, res) => res.sendStatus(200))

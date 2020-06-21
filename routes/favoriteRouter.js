@@ -1,9 +1,12 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 const cors = require('./cors');
 const authenticate = require('../authenticate');
 const Favorite = require('../models/favorite');
 
 const favoriteRouter = express.Router();
+
+favoriteRouter.use(bodyParser.json());
 
 favoriteRouter.route('/')
     .options(cors.corsWithOptions, (req, res) => res.sendStatus(200))
